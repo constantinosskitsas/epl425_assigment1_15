@@ -44,13 +44,11 @@ public class Server {
 		public UserThread(Socket socketToUse) {
 
 			try {
-				System.out.println("oi");
 				uSocket = socketToUse;
 				reader = new BufferedReader(new InputStreamReader(uSocket.getInputStream()));
 					requestsServed++;
 					maxRequests--;	
 				writer = new PrintWriter(uSocket.getOutputStream());
-				System.out.println("oi2");
 			} catch (Exception exception) {
 				exception.printStackTrace();
 			}
@@ -75,9 +73,7 @@ public class Server {
 			String messageToSend="";
 			boolean flag=false;
 			try {
-				System.out.println("oi3");
 				while (maxRequests>0 &&(messageReceived = reader.readLine()) != null) {
-					System.out.println("o");
 					messageToSend="Welcome + Id:"+ findId(messageReceived)+randomPayload();
 					writer.println(messageToSend);
 						
@@ -98,7 +94,6 @@ public class Server {
 					}
 					
 					}
-					System.out.println("oi");
 					writer.flush();
 				}
 			} catch (Exception exception) {
