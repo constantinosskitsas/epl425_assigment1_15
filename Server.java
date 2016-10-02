@@ -92,6 +92,7 @@ public class Server {
 					}
 					
 					}
+					System.out.println("illa");
 					writer.flush();
 				}
 			} catch (Exception exception) {
