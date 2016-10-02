@@ -95,7 +95,6 @@ public class Client {
 				reader = new BufferedReader(new InputStreamReader(userSocket.getInputStream()));
 				writer.println("HELLO " + InetAddress.getLocalHost().getHostAddress() 
 						+ " " + port + " " + myId);
-				System.out.println("akdsg;lf");
 				writer.flush();
 			} catch (Exception exception) {
 				exception.printStackTrace();
