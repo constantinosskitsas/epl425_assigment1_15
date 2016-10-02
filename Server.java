@@ -1,5 +1,9 @@
+package epl425_server;
+import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 /*
@@ -31,8 +35,8 @@ public class Server {
 
 	
 	public class UserThread extends Thread {
-		DataInputStream reader;
-		DataOutputStream writer;
+		BufferedReader reader;
+		PrintWriter writer;
 		Socket uSocket;
 /**Constructor
  * 
@@ -42,10 +46,10 @@ public class Server {
 
 			try {
 				uSocket = socketToUse;
-				reader = new DataInputStream( uSocket.getInputStream());
+				reader = new BufferedReader(new InputStreamReader(uSocket.getInputStream()));
 					requestsServed++;
 					maxRequests--;	
-				writer = new DataOutputStream(uSocket.getOutputStream());
+				writer = new PrintWriter(uSocket.getOutputStream());
 			} catch (Exception exception) {
 				exception.printStackTrace();
 			}
@@ -57,7 +61,7 @@ public class Server {
 	 */
 		public String findId(String from) {
 			String aString = "";
-			String[] sth=from.split(" ");
+			String[] sth=aString.split(" ");
 			return sth[2];
 		}
 
@@ -70,10 +74,9 @@ public class Server {
 			String messageToSend="";
 			boolean flag=false;
 			try {
-				while (maxRequests>0&&(messageReceived = reader.readUTF()) != null) {
-					
+				while (maxRequests>0 &&(messageReceived = reader.readLine()) != null) {
 					messageToSend="Welcome + Id:"+ findId(messageReceived)+randomPayload();
-					writer.writeUTF(messageToSend);
+					writer.write(messageToSend);
 						
 						maxRequests--;
 						requestsServed++;
@@ -90,10 +93,8 @@ public class Server {
 						System.out.println(requestsServed);
 						start = System.nanoTime();
 					}
-					
-					}
-					
 					writer.flush();
+					}
 				}
 			} catch (Exception exception) {
 				exception.printStackTrace();
