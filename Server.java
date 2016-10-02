@@ -1,4 +1,3 @@
-package epl425_server;
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
