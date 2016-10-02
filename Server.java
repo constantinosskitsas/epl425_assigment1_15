@@ -75,6 +75,7 @@ public class Server {
 			String messageToSend="";
 			boolean flag=false;
 			try {
+				System.out.println("oi3");
 				while (maxRequests>0 &&(messageReceived = reader.readLine()) != null) {
 					System.out.println("o");
 					messageToSend="Welcome + Id:"+ findId(messageReceived)+randomPayload();
