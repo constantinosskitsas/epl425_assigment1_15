@@ -71,7 +71,7 @@ public class Server {
 		 * reads user message and responds also calculates throughput
 		 */
 		public void run() {
-			String messageReceived;
+			String messageReceived="";
 			String messageToSend="";
 			boolean flag=false;
 			try {
