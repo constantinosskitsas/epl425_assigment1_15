@@ -50,6 +50,7 @@ public class Server {
 					requestsServed++;
 					maxRequests--;	
 				writer = new PrintWriter(uSocket.getOutputStream());
+				System.out.println("oi2");
 			} catch (Exception exception) {
 				exception.printStackTrace();
 			}
