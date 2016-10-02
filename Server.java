@@ -89,8 +89,9 @@ public class Server {
 						System.out.println(requestsServed);
 						start = System.nanoTime();
 					}
-					writer.flush();
+					
 					}
+					writer.flush();
 				}
 			} catch (Exception exception) {
 				exception.printStackTrace();
