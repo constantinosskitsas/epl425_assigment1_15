@@ -47,7 +47,7 @@ public class Client {
 			long latency = 0;
 
 			try {
-				while (!finishFlag&&(messageRead = reader.readLine()) != null) {
+				while (!finishFlag&&(messageRead = reader.readUTF()) != null) {
 					receiveAnswerTime = System.nanoTime();
 					requestsToDo--;
 					if (requestsToDo == 0) {
