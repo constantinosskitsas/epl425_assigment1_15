@@ -74,6 +74,7 @@ public class Server {
 			boolean flag=false;
 			try {
 				while (maxRequests>0 &&(messageReceived = reader.readLine()) != null) {
+					System.out.println("o");
 					messageToSend="Welcome + Id:"+ findId(messageReceived)+randomPayload();
 					writer.write(messageToSend);
 						
@@ -92,8 +93,10 @@ public class Server {
 						System.out.println(requestsServed);
 						start = System.nanoTime();
 					}
-					writer.flush();
+					
 					}
+					System.out.println("oi");
+					writer.flush();
 				}
 			} catch (Exception exception) {
 				exception.printStackTrace();
