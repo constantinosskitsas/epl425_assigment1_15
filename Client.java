@@ -1,4 +1,4 @@
-package epl425_client;
+
 import java.util.ArrayList;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
