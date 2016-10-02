@@ -79,7 +79,7 @@ public class Server {
 				while (maxRequests>0 &&(messageReceived = reader.readLine()) != null) {
 					System.out.println("o");
 					messageToSend="Welcome + Id:"+ findId(messageReceived)+randomPayload();
-					writer.write(messageToSend);
+					writer.println(messageToSend);
 						
 						maxRequests--;
 						requestsServed++;
