@@ -71,7 +71,7 @@ public class Server {
 			boolean flag=false;
 			try {
 				while (maxRequests>0&&(messageReceived = reader.readUTF()) != null) {
-					System.out.println(messageReceived);
+					
 					messageToSend="Welcome + Id:"+ findId(messageReceived);
 					writer.writeUTF(messageToSend);
 						
@@ -92,7 +92,7 @@ public class Server {
 					}
 					
 					}
-					System.out.println("illa");
+					
 					writer.flush();
 				}
 			} catch (Exception exception) {
