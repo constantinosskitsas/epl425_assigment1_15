@@ -44,6 +44,7 @@ public class Server {
 		public UserThread(Socket socketToUse) {
 
 			try {
+				System.out.println("oi");
 				uSocket = socketToUse;
 				reader = new BufferedReader(new InputStreamReader(uSocket.getInputStream()));
 					requestsServed++;
