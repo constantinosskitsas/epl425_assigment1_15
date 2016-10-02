@@ -58,7 +58,7 @@ public class Server {
 		public String findId(String from) {
 			String aString = "";
 			String[] sth=aString.split(" ");
-			return sth[3];
+			return sth[2];
 		}
 
 		@Override
