@@ -62,7 +62,7 @@ public class Server {
 	 */
 		public String findId(String from) {
 			String aString = "";
-			String[] sth=aString.split(" ");
+			String[] sth=from.split(" ");
 			return sth[2];
 		}
 
