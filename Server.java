@@ -72,7 +72,7 @@ public class Server {
 			try {
 				while (maxRequests>0&&(messageReceived = reader.readUTF()) != null) {
 					
-					messageToSend="Welcome + Id:"+ findId(messageReceived);
+					messageToSend="Welcome + Id:"+ findId(messageReceived)+randomPayload();
 					writer.writeUTF(messageToSend);
 						
 						maxRequests--;
